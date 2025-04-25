@@ -1236,12 +1236,12 @@ section,
   margin-bottom: 10px;
 }
 
-.about-3 .causas h3{
+.about-3 .causas h3 {
   color: var(--accent-color);
   font-size: 20px
 }
 
-.about-3 .causas p{
+.about-3 .causas p {
   color: #000000;
   font-size: 14px
 }
@@ -1300,15 +1300,11 @@ ul.custom-icons li::before {
 }
 
 .about-3 .about {
-  height: auto;
-  width: 70vh;
   box-shadow: 7px 4px 21px 0px rgba(0, 0, 0, 0.7);
   border-radius: 15px;
 }
 
 .about-3 img {
-  right: auto;
-  width: 70vh;
   border-radius: 15px;
 }
 
@@ -1438,6 +1434,18 @@ ul.custom-icons li::before {
   font-size: 24px;
   font-weight: 700;
   margin-bottom: 15px;
+}
+
+.work-process .content-title {
+  color: var(--accent-color);
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  font-weight: 700;
+  border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
+}
+
+.work-process p {
+  color: var(--default-color);
 }
 
 .work-process .steps-content p {
