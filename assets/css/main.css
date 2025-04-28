@@ -396,10 +396,13 @@ h6 {
 # Global Footer 
 --------------------------------------------------------------*/
 .footer {
-  --background-color: color-mix(in srgb, var(--default-color), transparent 95%);
+  background: url("../img/fundo.png") fixed no-repeat center;
+  background-position: center;
+  background-size: cover;
+
+
   border-top: 2px solid color-mix(in srgb, var(--default-color), transparent 90%);
   color: var(--default-color);
-  background-color: var(--default-color);
   font-size: 14px;
   padding: 18px 0;
   position: relative;
@@ -891,7 +894,7 @@ section,
 }
 
 .about .content {
-  background: url("../img/fundo2.png") fixed no-repeat center;
+  background: url("../img/fundo.png") fixed no-repeat center;
   background-position: center;
   background-size: cover;
 
@@ -931,13 +934,20 @@ section,
   font-size: 23px;
 }
 
+.about .content-title-2{
+  color: #a54846;
+  font-weight: 800;
+  text-align: left;
+  font-size: 36px;
+}
+
 .about .content-title strong {
   font-weight: 700;
 }
 
 .about .content-subtitle {
-  color: var(--nav-dropdown-color);
-  font-size: 17px;
+  color: var(--background-color);
+  font-size: 15px;
 }
 
 .about .content-subtitle-p {
