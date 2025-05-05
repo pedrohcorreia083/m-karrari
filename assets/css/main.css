@@ -894,13 +894,28 @@ section,
 }
 
 .about .content {
-  background: url("../img/fundo.png") fixed no-repeat center;
+  position: relative;
+  background: url("../img/praia4.jpg") fixed no-repeat center;
   background-position: center;
   background-size: cover;
-
   color: var(--default-color);
   padding: 7rem 0;
+  z-index: 1;
 }
+
+.about .content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.4; 
+  z-index: -1; 
+}
+
+
 
 .about .content .img-overlap {
   box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.1);
@@ -934,7 +949,7 @@ section,
   font-size: 23px;
 }
 
-.about .content-title-2{
+.about .content-title-2 {
   color: #a54846;
   font-weight: 800;
   text-align: left;
@@ -1158,6 +1173,28 @@ section,
 /*--------------------------------------------------------------
 # About 3 Section
 --------------------------------------------------------------*/
+.about-3 {
+  position: relative;
+  background: url("../img/praia4.jpg") fixed no-repeat center;
+  background-position: center;
+  background-size: cover;
+  color: var(--default-color);
+  z-index: 1;
+}
+
+.about-3::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.4; 
+  z-index: -1; 
+}
+
+
 .about-3 .content-title {
   color: var(--accent-color);
   margin-bottom: 25px;
@@ -1243,12 +1280,6 @@ ul.custom-icons li::before {
   color: var(--accent-color);
 }
 
-.about-3 .pulsating-play-btn {
-  position: absolute;
-  left: calc(50% - 47px);
-  top: calc(50% - 47px);
-}
-
 .about-3 .about {
   box-shadow: 7px 4px 21px 0px rgba(0, 0, 0, 0.7);
   border-radius: 15px;
@@ -1270,6 +1301,7 @@ ul.custom-icons li::before {
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
   border-radius: 15px;
   padding: 10px 10px 10px 10px;
+
 }
 
 .features-2 .centro {
