@@ -69,10 +69,17 @@
   <main class="main">
 
     <!-- Page Title -->
-    <div class="page-title dark-background" data-aos="fade" style="background-image: url(assets/img/fundo.jpg);">
+    <div class="page-title dark-background" data-aos="fade">
+      <video autoplay muted loop playsinline class="bg-video">
+        <source src="./assets/img/fundo2.mp4" type="video/mp4">
+        Seu navegador não suporta vídeos HTML5.
+      </video>
+
+      <div class="overlay"></div> <!-- Máscara preta -->
+
       <div class="container position-relative">
         <h1>Algas</h1>
-        <p> Produtos com algas marinhas que hidratam, reconstroem e protegem os fios, equilibrando o pH e combatendo
+        <p>Produtos com algas marinhas que hidratam, reconstroem e protegem os fios, equilibrando o pH e combatendo
           danos químicos.</p>
         <nav class="breadcrumbs">
           <ol>
@@ -81,7 +88,9 @@
           </ol>
         </nav>
       </div>
-    </div><!-- End Page Title -->
+    </div>
+    <!-- End Page Title -->
+
 
     <!-- About 3 Section -->
     <section id="about-3" class="about-3 section">
