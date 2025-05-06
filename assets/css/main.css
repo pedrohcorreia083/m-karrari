@@ -964,7 +964,8 @@ section,
 }
 
 .about .content-subtitle {
-  color: var(--background-color);
+  color: var(--default-color);
+  font-weight: 400;
   font-size: 15px;
 }
 
