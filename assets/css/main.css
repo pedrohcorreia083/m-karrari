@@ -8,7 +8,7 @@
 :root {
   --background-color: #ffffff;
   --default-color: #000000;
-  --heading-color: #2d465e;
+  --heading-color: #000000;
   --accent-color: #FF6D6A;
   --surface-color: #ffffff;
   --contrast-color: #ffffff;
@@ -23,21 +23,6 @@
   --nav-dropdown-hover-color: #FF6D6A;
 }
 
-
-.light-background {
-  --background-color: #f9f9f9;
-  --surface-color: #ffffff;
-}
-
-.dark-background {
-  --background-color: #060606;
-  --default-color: #ffffff;
-  --heading-color: #ffffff;
-  --accent-color: #FF6D6A;
-  --surface-color: #252525;
-  --contrast-color: #ffffff;
-}
-
 :root {
   scroll-behavior: smooth;
 }
@@ -45,10 +30,35 @@
 /*--------------------------------------------------------------
 # General Styling & Shared Classes
 --------------------------------------------------------------*/
+html,
 body {
-  color: var(--default-color);
-  background-color: var(--background-color);
-  font-family: var(--default-font);
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: #333;
+  overflow-x: hidden;
+  position: relative;
+  z-index: 0;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+
+  background-image: url("../img/bg_shadow.jpg");
+  background-size: 100% auto;
+  background-attachment: fixed;
+  background-position: 50%;
+  background-repeat: no-repeat;
+
+  z-index: -1;
 }
 
 a {
@@ -72,65 +82,12 @@ h6 {
   font-family: var(--heading-font);
 }
 
-/* PHP Email Form Messages
-------------------------------*/
-.php-email-form .error-message {
-  display: none;
-  background: #df1529;
-  color: #ffffff;
-  text-align: left;
-  padding: 15px;
-  margin-bottom: 24px;
-  font-weight: 600;
-}
-
-.php-email-form .sent-message {
-  display: none;
-  color: #ffffff;
-  background: #059652;
-  text-align: center;
-  padding: 15px;
-  margin-bottom: 24px;
-  font-weight: 600;
-}
-
-.php-email-form .loading {
-  display: none;
-  background: var(--surface-color);
-  text-align: center;
-  padding: 15px;
-  margin-bottom: 24px;
-}
-
-.php-email-form .loading:before {
-  content: "";
-  display: inline-block;
-  border-radius: 50%;
-  width: 24px;
-  height: 24px;
-  margin: 0 10px -6px 0;
-  border: 3px solid var(--accent-color);
-  border-top-color: var(--surface-color);
-  animation: php-email-form-loading 1s linear infinite;
-}
-
-@keyframes php-email-form-loading {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
 /*--------------------------------------------------------------
-# Global Header
---------------------------------------------------------------*/
+# Global Header --------------------------------------------------------------*/
 .header {
   color: var(--default-color);
   background-color: var(--background-color);
-  padding: 20px 0;
+  padding: 15px 0;
   transition: all 0.5s;
   z-index: 997;
 }
@@ -140,25 +97,60 @@ h6 {
 }
 
 .header .logo img {
-  max-height: 60px;
+  max-height: 36px;
   margin-right: 8px;
 }
 
 .header .logo h1 {
-  font-size: 30px;
+  font-size: 26px;
   margin: 0;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--heading-color);
 }
 
+.header .btn-getstarted,
+.header .btn-getstarted:focus {
+  color: var(--contrast-color);
+  background: var(--accent-color);
+  font-size: 14px;
+  padding: 8px 25px;
+  margin: 0 0 0 30px;
+  border-radius: 50px;
+  transition: 0.3s;
+}
+
+.header .btn-getstarted:hover,
+.header .btn-getstarted:focus:hover {
+  color: var(--contrast-color);
+  background: color-mix(in srgb, var(--accent-color), transparent 15%);
+}
+
+@media (max-width: 1200px) {
+  .header .logo {
+    order: 1;
+  }
+
+  .header .btn-getstarted {
+    order: 2;
+    margin: 0 15px 0 0;
+    padding: 6px 15px;
+  }
+
+  .header .navmenu {
+    order: 3;
+  }
+}
+
+/* Global Header on Scroll
+------------------------------*/
 .scrolled .header {
-  box-shadow: 0px 0 18px color-mix(in srgb, var(--default-color), transparent 85%);
+  --background-color: rgba(244, 239, 237, 0.95);
 }
 
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
-/* Navmenu - Desktop */
+/* Desktop Navigation */
 @media (min-width: 1200px) {
   .navmenu {
     padding: 0;
@@ -176,11 +168,20 @@ h6 {
     position: relative;
   }
 
+  .navmenu>ul>li {
+    white-space: nowrap;
+    padding: 15px 14px;
+  }
+
+  .navmenu>ul>li:last-child {
+    padding-right: 0;
+  }
+
   .navmenu a,
   .navmenu a:focus {
     color: var(--nav-color);
-    padding: 18px 15px;
-    font-size: 16px;
+    font-size: 15px;
+    padding: 0 2px;
     font-family: var(--nav-font);
     font-weight: 400;
     display: flex;
@@ -188,6 +189,7 @@ h6 {
     justify-content: space-between;
     white-space: nowrap;
     transition: 0.3s;
+    position: relative;
   }
 
   .navmenu a i,
@@ -198,8 +200,24 @@ h6 {
     transition: 0.3s;
   }
 
-  .navmenu li:last-child a {
-    padding-right: 0;
+  .navmenu>ul>li>a:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -6px;
+    left: 0;
+    background-color: var(--accent-color);
+    visibility: hidden;
+    width: 0px;
+    transition: all 0.3s ease-in-out 0s;
+  }
+
+  .navmenu a:hover:before,
+  .navmenu li:hover>a:before,
+  .navmenu .active:before {
+    visibility: visible;
+    width: 100%;
   }
 
   .navmenu li:hover>a,
@@ -221,7 +239,7 @@ h6 {
     transition: 0.3s;
     border-radius: 4px;
     z-index: 99;
-    box-shadow: 0px 0px 30px color-mix(in srgb, var(--default-color), transparent 85%);
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
   }
 
   .navmenu .dropdown ul li {
@@ -265,7 +283,7 @@ h6 {
   }
 }
 
-/* Navmenu - Mobile */
+/* Mobile Navigation */
 @media (max-width: 1199px) {
   .mobile-nav-toggle {
     color: var(--nav-color);
@@ -290,10 +308,11 @@ h6 {
     margin: 0;
     border-radius: 6px;
     background-color: var(--nav-mobile-background-color);
+    border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+    box-shadow: none;
     overflow-y: auto;
     transition: 0.3s;
     z-index: 9998;
-    box-shadow: 0px 0px 30px color-mix(in srgb, var(--default-color), transparent 90%);
   }
 
   .navmenu a,
@@ -351,8 +370,6 @@ h6 {
     padding: 10px 0;
     margin: 10px 20px;
     background-color: var(--nav-dropdown-background-color);
-    border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
-    box-shadow: none;
     transition: all 0.5s ease-in-out;
   }
 
@@ -482,6 +499,180 @@ h6 {
   width: 180px;
   padding-bottom: 2px;
 }
+
+
+/*--------------------------------------------------------------
+# Services Section
+--------------------------------------------------------------*/
+.services {
+  padding-top: 60px;
+  padding-bottom: 30px;
+}
+
+.services .services-row {
+  position: relative;
+}
+
+.services .services-headline .services-subtitle {
+  color: var(--accent-color);
+  font-weight: 600;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.services .services-headline .services-title {
+  color: var(--heading-color);
+  font-size: 2.5rem;
+  line-height: 1.2;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-size: 30px;
+}
+
+.services .services-description {
+  margin-bottom: 30px;
+}
+
+.services .services-description p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.services .services-image-container {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.services .services-image-container .services-image {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  height: 460px;
+}
+
+.services .services-image-container .services-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.services .services-grid {
+  margin-left: 50px;
+}
+
+@media (max-width: 991px) {
+  .services .services-grid {
+    margin-left: 0;
+    margin-top: 70px;
+  }
+}
+
+.services .service-card {
+  background-color: color-mix(in srgb, var(--accent-color), transparent 92%);
+  border-radius: 25px;
+  padding: 30px 25px;
+  border: 1px solid rgba(154, 154, 154, 0.3);
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.services .service-card:hover {
+  background-color: var(--accent-color);
+  transform: translateY(-5px);
+}
+
+.services .service-card:hover .service-icon {
+  color: var(--contrast-color);
+  transform: scale(0.95);
+}
+
+.services .service-card:hover .service-info h3 a,
+.services .service-card:hover .service-info p {
+  color: var(--contrast-color);
+  transform: scale(0.95);
+}
+
+.services .service-card:hover .service-content .read-more-btn {
+  background-color: color-mix(in srgb, var(--contrast-color), transparent 84%);
+  color: var(--contrast-color);
+}
+
+.services .service-content .service-icon {
+  width: 65px;
+  height: 65px;
+  line-height: 65px;
+  margin: 0 auto;
+  font-size: 48px;
+  color: var(--heading-color);
+  transition: all 0.3s ease;
+}
+
+.services .service-content .service-info h3 {
+  font-size: 1.4rem;
+  margin: 15px 0;
+  transition: all 0.3s ease;
+}
+
+.services .service-content .service-info h3 a {
+  color: var(--heading-color);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.services .service-content .service-info p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  transition: all 0.3s ease;
+}
+
+.services .service-content .service-action {
+  margin-top: 20px;
+}
+
+.services .service-content .service-action .read-more-btn {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.services .service-content .service-action .read-more-btn:hover {
+  transform: translateX(5px);
+}
+
+.services .service-content .service-action .read-more-btn i {
+  margin-left: 5px;
+}
+
+@media (max-width: 767px) {
+  .services .services-headline .services-title {
+    font-size: 2rem;
+  }
+
+  .services .services-image-container .services-image {
+    height: 350px;
+  }
+
+  .services .services-image-container .circular-btn {
+    bottom: -40px;
+    right: 50%;
+    transform: translateX(50%);
+  }
+
+  .services .services-image-container .circular-btn .circular-link {
+    width: 130px;
+    height: 130px;
+    font-size: 0.9rem;
+  }
+}
+
 
 /*--------------------------------------------------------------
 # Preloader
@@ -633,8 +824,6 @@ h6 {
 --------------------------------------------------------------*/
 section,
 .section {
-  color: var(--default-color);
-  background-color: var(--background-color);
   padding: 60px 0;
   scroll-margin-top: 100px;
   overflow: clip;
@@ -652,21 +841,30 @@ section,
 # Global Section Titles
 --------------------------------------------------------------*/
 .section-title {
-  text-align: center;
+  text-align: left;
   padding-bottom: 60px;
   position: relative;
 }
 
 .section-title h2 {
   font-size: 28px;
-  font-weight: 500;
+  font-weight: bold;
   margin-bottom: 15px;
+  line-height: 75px;
+  text-transform: uppercase;
 }
 
 .section-title p {
-  margin-bottom: 0;
   font-family: var(--heading-font);
-  font-size: 32px;
+  font-size: 16px;
+  color: #000;
+  font-weight: normal;
+  line-height: 20px;
+}
+
+.section-title img {
+  max-width: 55vh;
+  height: auto;
 }
 
 /*--------------------------------------------------------------
@@ -817,8 +1015,17 @@ section,
 # Services Section
 --------------------------------------------------------------*/
 .services .section-title h2 {
-  color: var(--accent-color);
-  font-size: 20px;
+  margin: 0px;
+  padding: 0px;
+  margin-bottom: 20px;
+  display: block;
+  text-align: left;
+  font-family: Helvetica;
+  font-size: 44px;
+  color: #000;
+  font-weight: bold;
+  line-height: 75px;
+  text-transform: uppercase;
 }
 
 .services .content .service-item {
@@ -910,10 +1117,6 @@ section,
 }
 
 .about .content {
-  position: relative;
-  background: url("../img/fundo_praia.jpg") fixed no-repeat center;
-  background-position: center;
-  background-size: cover;
   color: var(--default-color);
   padding: 7rem 0;
   z-index: 1;
@@ -1177,14 +1380,14 @@ section,
 /*--------------------------------------------------------------
 # About 3 Section
 --------------------------------------------------------------*/
-.about-3 {
+/* .about-3 {
   position: relative;
   background: url("../img/praia9.jpg") fixed no-repeat center;
   background-position: center;
   background-size: cover;
   color: var(--default-color);
   z-index: 1;
-}
+} */
 
 .about-3 .content-title {
   color: var(--accent-color);
@@ -1303,14 +1506,14 @@ ul.custom-icons li::before {
   border-radius: 15px;
 } */
 
-.features-2 {
+/* .features-2 {
   position: relative;
   background: url("../img/praia9.jpg") fixed no-repeat center;
   background-position: center;
   background-size: cover;
   color: var(--default-color);
   z-index: 1;
-}
+} */
 
 .features-2 .feature-item {
   border-radius: 15px;

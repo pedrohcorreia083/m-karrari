@@ -33,10 +33,10 @@
 
 <body class="index-page">
 
-  <header id="header" class="header d-flex align-items-center position-relative">
-    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
 
-      <a href="index.html" class="logo d-flex align-items-center">
+      <a href="index.html" class="logo d-flex align-items-center me-auto">
         <img src="assets/img/horizontal.png" alt="Mkarrari">
       </a>
 
@@ -69,7 +69,7 @@
   <main class="main">
 
     <!-- Hero Section -->
-    <section id="hero" class="hero section dark-background">
+    <section id="hero" class="hero section">
 
       <video class="d-block w-100 hero-video" autoplay muted loop playsinline>
         <source src="assets/img/fundo1.mp4" type="video/mp4">
@@ -79,94 +79,146 @@
     </section><!-- /Hero Section -->
 
 
+    <!-- Services Section -->
+    <section id="services" class="services section">
 
-    <section id="about-3" class="about-3 section">
-
-      <div class="container">
-        <div class="row gy-4 justify-content-between align-items-center">
-          <div class="col-lg-5 order-lg-2 position-relative" data-aos="zoom-out">
-            <img src="assets/img/logo_f_b.png" alt="Image" class="img-fluid">
-          </div>
-          <div class="col-lg-7 order-lg-1" data-aos="fade-up" data-aos-delay="100">
-            <h2 class="content-title mb-4">Quem Somos</h2>
-            <p class="mb-3">
-              Na Mkarrari, unimos a sabedoria milenar das algas à inovação científica para oferecer tratamentos que
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <div class="row">
+          <div class="col-lg-8">
+            <h2>Descubra o Poder das Algas</h2>
+            <p>Na Mkarrari, unimos a sabedoria milenar das algas à inovação científica para oferecer tratamentos que
               respeitam sua natureza e elevam sua beleza. Descubra nossas linhas com algas marinhas e transforme seus
-              fios de dentro para fora.
+              fios
+              de dentro para fora.
             </p>
-            <p class="mb-3">
-              Porque cabelos saudáveis começam com ciência inteligente e ingredientes que a natureza já aperfeiçoou.
-            </p>
+            <p>Porque cabelos saudáveis começam com ciência inteligente e ingredientes que a natureza já aperfeiçoou</p>
+          </div>
+          <div class="col-lg-3 text-center">
+            <img src="./assets/img/logo_f_b.png" class="img-fluid" alt="">
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- About Section -->
-    <section id="about" class="about section">
+      </div><!-- End Section Title -->
 
-      <div class="content">
-        <div class="container">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="services-row">
           <div class="row">
-            <div class="col-lg-5 mb-4 mb-lg-0">
-              <img src="assets/img/img_long_5.jpg" alt="Image " class="img-fluid img-overlap" data-aos="zoom-out">
-            </div>
-            <div class="col-lg-7 order-lg-2 position-relative" data-aos="fade-up" data-aos-delay="100">
-              <h2 class="content-title-2 mb-4">
-                Descubra o Poder das Algas
-              </h2>
-              <p class="content-subtitle">
-                As algas marinhas são verdadeiras superpoderosas da natureza! Elas sobrevivem em ambientes difíceis e
-                trazem para seus cabelos nutrientes incríveis. Veja por que a Mkarrari usa algas em seus produtos:
-              </p>
-
-              <div class="row">
-
-                <div class="col">
-                  <h2 class="content-title mb-4">1. Absorção Perfeita</h2>
-                  <p class="content-subtitle">As algas têm uma estrutura igual à do seu cabelo. Isso faz com que
-                    vitaminas, minerais e
-                    aminoácidos
-                    sejam absorvidos 100%, reconstruindo os fios sem deixar resíduos.
-                  </p>
-                  <h2 class="content-title mb-4">2. Proteção Contra Danos</h2>
-                  <p class="content-subtitle">Elas contêm astaxantina, um antioxidante 10x mais forte que a vitamina C.
-                    Ele combate os efeitos do
-                    sol, poluição e químicos (como tinturas), evitando quebras e ressecamento.</p>
-                  <h2 class="content-title mb-4">3. Hidratação Que Dura</h2>
-                  <p class="content-subtitle">Quando hidratadas, as algas formam um gel natural (águr-águr) que prende
-                    água dentro do cabelo.
-                    Ideal
-                    para quem usa chapinha, descolore ou vive na praia!</p>
-                </div>
-
-                <div class="col">
-                  <h2 class="content-title mb-4">4. Nutrição Completa</h2>
-                  <p class="content-subtitle">São ricas em 60 minerais e vitaminas (como zinco, magnésio e vitaminas A,
-                    B e C), que devolvem o
-                    brilho
-                    e fortalecem os fios de dentro para fora.
-                  </p>
-                  <h2 class="content-title mb-4">5. Couro Cabeludo Saudável</h2>
-                  <p class="content-subtitle">O pH das algas é parecido com o do couro cabeludo (levemente ácido). Isso
-                    controla caspa, coceira e
-                    oleosidade, mantendo a região equilibrada.
-                  </p>
-                  <h2 class="content-title mb-4">6. Sustentável e Natural</h2>
-                  <p class="content-subtitle">Colhemos as algas com cuidado para não prejudicar o meio ambiente. Todos
-                    os produtos são veganos,
-                    sem
-                    crueldade animal e livres de químicos agressivos.
-                  </p>
-                </div>
+            <div class="col-lg-4">
+              <div class="services-headline" data-aos="fade-up">
+                <p class="services-subtitle">Nossos estudos</p>
+                <h2 class="services-title">Por que escolhemos as algas?</h2>
               </div>
 
+              <div class="services-description" data-aos="fade-up" data-aos-delay="100">
+                <p>As algas marinhas são verdadeiras superpoderosas da natureza! Elas sobrevivem em ambientes difíceis e
+                  trazem para seus cabelos nutrientes incríveis. Veja por que a Mkarrari usa algas em seus produtos:
+                </p>
+              </div>
 
+              <div class="services-image-container" data-aos="fade-up" data-aos-delay="200">
+                <div class="services-image">
+                  <img src="./assets/img/fundo_old.jpg" alt="Services" class="img-fluid">
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-8">
+              <div class="services-grid">
+                <div class="row gy-4">
+                  <!-- Service Item 1 -->
+                  <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-card">
+                      <div class="service-content text-center">
+                        <div class="service-info">
+                          <h3><a href="#">Absorção Perfeita</a></h3>
+                          <p>
+                            As algas têm uma estrutura igual à do seu cabelo. Isso faz com que vitaminas, minerais e
+                            aminoácidos sejam absorvidos 100%, reconstruindo os fios sem deixar resíduos.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Service Item 2 -->
+                  <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-card">
+                      <div class="service-content text-center">
+                        <div class="service-info">
+                          <h3><a href="#">Proteção Contra Danos</a></h3>
+                          <p>
+                            Elas contêm astaxantina, um antioxidante 10x mais forte que a vitamina C. Ele combate os
+                            efeitos do sol, poluição e químicos (como tinturas), evitando quebras e ressecamento.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Service Item 3 -->
+                  <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-card">
+                      <div class="service-content text-center">
+                        <div class="service-info">
+                          <h3><a href="#">Hidratação Que Dura</a></h3>
+                          <p>Quando hidratadas, as algas formam um gel natural (águr-águr) que prende água dentro do
+                            cabelo. Ideal para quem usa chapinha, descolore ou vive na praia!</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Service Item 4 -->
+                  <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-card">
+                      <div class="service-content text-center">
+                        <div class="service-info">
+                          <h3><a href="#">Nutrição Completa</a></h3>
+                          <p>São ricas em 60 minerais e vitaminas (como zinco, magnésio e vitaminas A, B e C), que
+                            devolvem o brilho e fortalecem os fios de dentro para fora.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Service Item 5 -->
+                  <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-card">
+                      <div class="service-content text-center">
+                        <div class="service-info">
+                          <h3><a href="#">Couro Cabeludo Saudável</a></h3>
+                          <p>O pH das algas é parecido com o do couro cabeludo (levemente ácido). Isso controla caspa,
+                            coceira e oleosidade, mantendo a região equilibrada.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Service Item 6 -->
+                  <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-card">
+                      <div class="service-content text-center">
+                        <div class="service-info">
+                          <h3><a href="#">Sustentável e Natural</a></h3>
+                          <p>Colhemos as algas com cuidado para não prejudicar o meio ambiente. Todos os produtos são
+                            veganos, sem crueldade animal e livres de químicos agressivos.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
             </div>
           </div>
         </div>
+
       </div>
-    </section><!-- /About Section -->
+
+    </section><!-- /Services Section -->
 
 
     <section id="features-2" class="features-2 section">
