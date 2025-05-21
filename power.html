@@ -33,6 +33,13 @@
 
 <body class="about-page">
 
+    <div class="video-background">
+        <video autoplay muted loop playsinline>
+            <source src="./assets/img/fundo.mp4" type="video/mp4">
+            Seu navegador não suporta vídeos em HTML5.
+        </video>
+    </div>
+
     <header id="header" class="header d-flex align-items-center position-relative">
         <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
@@ -143,29 +150,24 @@
     </main>
 
     <footer id="footer" class="footer">
-
-        <!-- Vídeo de fundo -->
-        <video autoplay muted loop playsinline class="footer-video">
-            <source src="./assets/img/fundo3.mp4" type="video/mp4">
-            Seu navegador não suporta vídeos HTML5.
-        </video>
-
         <div class="container position-relative">
-            <div class="copyright text-center">
-                <img src="assets/img/logo_b.png" class="img-fluid" alt="">
-            </div>
-            <div class="social-links d-flex justify-content-center">
-                <a href="https://www.facebook.com/mkarrarioficial"><i class="bi bi-facebook"></i></a>
-                <a href="https://www.instagram.com/mkarrarioficial/"><i class="bi bi-instagram"></i></a>
-            </div>
-            <div class="copyright">
-                &copy; Copyright <strong><span>MKarrari</span></strong>. Todos os Direitos Reservados
-            </div>
-            <div class="credits">
-                Projetado por <a href="https://mwdigitalmkt.com.br/">MW Digital</a>
+            <div class="row">
+                <div class="col">
+                    <div class="copyright text-center">
+                        <img src="assets/img/horizontal.png" class="img-fluid" alt="">
+                    </div>
+                </div>
+                <div class="col align-self-end">
+                    <div class="social-links d-flex justify-content-center">
+                        <a href="https://www.facebook.com/mkarrarioficial"><i class="bi bi-facebook"></i></a>
+                        <a href="https://www.instagram.com/mkarrarioficial/"><i class="bi bi-instagram"></i></a>
+                    </div>
+                    <div class="copyright">
+                        &copy; MKarrari. Desenvolvido por <a href="https://mwdigitalmkt.com.br/">MW Digital</a>
+                    </div>
+                </div>
             </div>
         </div>
-
     </footer>
 
     <!-- Scroll Top -->
