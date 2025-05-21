@@ -811,6 +811,7 @@ h6 {
 
 .page-title .breadcrumbs ol li+li {
   padding-left: 10px;
+  color: var(--background-color);
 }
 
 .page-title .breadcrumbs ol li+li::before {
