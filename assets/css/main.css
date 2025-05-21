@@ -600,7 +600,8 @@ h6 {
 }
 
 .services .service-card {
-  background-color: color-mix(in srgb, var(--accent-color), transparent 92%);
+  /* background-color: color-mix(in srgb, var(--accent-color), transparent 92%); */
+  background: var(--background-color);
   border-radius: 25px;
   padding: 30px 25px;
   border: 1px solid rgba(154, 154, 154, 0.3);
@@ -1243,7 +1244,6 @@ section,
 }
 
 .about .feature-box:hover .icon-container {
-  background: var(--accent-color);
   color: var(--contrast-color);
   filter: none;
 }
@@ -1252,15 +1252,12 @@ section,
   width: 34vh;
   height: auto;
   border-radius: 50%;
-  background: color-mix(in srgb, var(--accent-color), transparent 90%);
-  color: var(--accent-color);
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto 1.5rem;
   font-size: 1.8rem;
   transition: all 0.3s ease;
-  box-shadow: 0 5px 15px color-mix(in srgb, var(--accent-color), transparent 85%);
   filter: grayscale(100%);
   text-transform: uppercase;
 }
