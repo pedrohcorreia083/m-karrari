@@ -30,36 +30,32 @@
 /*--------------------------------------------------------------
 # General Styling & Shared Classes
 --------------------------------------------------------------*/
-html,
 body {
-  height: 100%;
   margin: 0;
   padding: 0;
-}
-
-body {
-  color: #333;
-  overflow-x: hidden;
+  font-family: var(--default-font);
+  color: var(--default-color);
   position: relative;
   z-index: 0;
+  overflow-x: hidden;
 }
 
-body::before {
-  content: "";
+.video-background {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-
-  background-image: url("../img/bg_shadow.jpg");
-  background-size: 100% auto;
-  background-attachment: fixed;
-  background-position: 50%;
-  background-repeat: no-repeat;
-
+  overflow: hidden;
   z-index: -1;
 }
+
+.video-background video {
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+}
+
 
 a {
   color: var(--accent-color);
@@ -1712,6 +1708,7 @@ ul.custom-icons li::before {
   border-radius: 15px;
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
 }
+
 .features-2 .feature-item {
   border-radius: 15px;
   padding: 10px 10px 10px 10px;
